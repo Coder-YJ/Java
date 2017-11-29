@@ -36,7 +36,7 @@ public class HuaRongDao extends Frame implements MouseListener,KeyListener,Actio
 		{
 			person[k] = new Person(k, name[k]);
 			person[k].addMouseListener(this);
-			person[k].addMouseListener(this);
+			person[k].addKeyListener(this);
 			add(person[k]);
 		}
 		person[0].setBounds(104, 54, 100, 100);
