@@ -168,22 +168,24 @@ public class HuaRongDao extends Frame implements MouseListener,KeyListener,Actio
 		int x=-1,y=-1;
 		x = e.getX();
 		y = e.getY();
+		
 		int w = man.getBounds().width;
 		int h = man.getBounds().height;
+		double k =((double)h)/w;
 		
-		if(y > h/2)
-		{
-			go(man, bleow);
-		}
-		if(y < h/2)
+		if((y<k*x) && ((y+k*x) < h))
 		{
 			go(man, above);
 		}
-		if(x < w/2)
+		if((y>k*x) && ((y+k*x) > h))
+		{
+			go(man, bleow);
+		}
+		if((y>k*x) && ((y+k*x) < h))
 		{
 			go(man, left);
 		}
-		if(x > w/2)
+		if((y<k*x) && ((y+k*x) > h))
 		{
 			go(man, right);
 		}
