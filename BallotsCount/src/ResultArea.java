@@ -10,7 +10,9 @@ public class ResultArea extends Panel
 		this.personSelected = personSelected;
 		text  = new TextArea(12, 40);
 		text.setText(null);
+		text.setBackground(new Color(200, 251, 23));
 		add(text);
+		setBackground(new Color(85, 153 ,65));
 	}
 	
 	public void setPersonSelected(PersonSelected personSelected[])

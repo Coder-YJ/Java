@@ -18,6 +18,7 @@ public class SelectPane extends Panel implements ActionListener,ItemListener
 		button = new Button("х╥хо");
 		button.addActionListener(this);
 		init();
+		setBackground(new Color(20, 198 ,210));
 	}
 
 	public void init() 

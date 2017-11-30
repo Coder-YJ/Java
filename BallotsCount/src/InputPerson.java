@@ -16,6 +16,7 @@ public class InputPerson extends Panel implements ActionListener
 		button = new Button("È·¶¨");
 		add(button);
 		button.addActionListener(this);
+		setBackground(new Color(125,253,25));
 	}
 
 	@Override
