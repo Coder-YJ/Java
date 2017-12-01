@@ -33,6 +33,7 @@ public class SelectWindow extends Frame implements ActionListener
 		center.add("input", input);
 		center.add("select", select);
 		center.add("show", show);
+		center.setBackground(new Color(95, 189, 23));
 		
 		buttonInput = new Button("输入候选人界面");
 		buttonInput.addActionListener(this);
@@ -47,6 +48,7 @@ public class SelectWindow extends Frame implements ActionListener
 		south.add(buttonSelect);
 		south.add(buttonResult);
 		south.add(reNew);
+		south.setBackground(new Color(58, 58, 58));
 		add(center,BorderLayout.CENTER);
 		add(south,BorderLayout.SOUTH);
 		setSize(450, 200);
