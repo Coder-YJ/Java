@@ -4,7 +4,8 @@ import java.awt.event.*;
 
 public class GoBang extends Frame 
 {
-    
+    Button button1 = new Button("确定");
+    ChessPad  chessPad;
 	public GoBang() 
 	{
 		// TODO Auto-generated constructor stub
@@ -16,8 +17,10 @@ public class GoBang extends Frame
 				System.exit(0);
 			}
 		});
-		setLayout(new BorderLayout());
-		add(new ChessPad(),BorderLayout.CENTER);
+		setLayout(null);
+		chessPad = new ChessPad();
+		chessPad.setBounds(70, 70, 440, 440); 
+		add(chessPad);
 		setBounds(100, 100, 600, 600);
 		setVisible(true);
 	}
