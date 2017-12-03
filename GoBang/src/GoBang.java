@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class GoBang extends Frame 
 {
-    Button button1 = new Button("ç¡®å®š");
+    Button button1 = new Button("È·¶¨");
     ChessPad  chessPad;
 	public GoBang() 
 	{

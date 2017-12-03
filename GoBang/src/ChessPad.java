@@ -8,9 +8,10 @@ public class ChessPad extends Panel implements MouseListener,ActionListener
 	int chessManColor;
 	TextField text = new TextField("黑棋先手");
 	int xPos, yPos;
+	ChessRule chessRule;
+	
 	public ChessPad() 
 	{
-		
 		xPos = -1;
 		yPos = -1;
 		setLayout(null);
@@ -19,7 +20,7 @@ public class ChessPad extends Panel implements MouseListener,ActionListener
 		setBackground(Color.orange);
 		
 		addMouseListener(this);
-		
+		chessRule  = new ChessRule(this);
 		chessManPoint = new int[19][19];
 		for(int k=0; k<19; k++)
 		{
@@ -89,23 +90,36 @@ public class ChessPad extends Panel implements MouseListener,ActionListener
 				;
 			}
 			else
-			{
-				ChessMan chessMan = new ChessMan(chessManColor);
-				add(chessMan);
-				chessMan.setBounds(a*20 - 10, b*20 -10, 20, 20);
-				
-				chessManColor = chessManColor*(-1);
-				if(chessManColor == 1)
-				{
-					text.setText("请白棋落子");
-				}
-				else if(chessManColor == -1)
-				{
-					text.setText("请黑子落子");
-				}
+			{  	
 				calculatePosition(x, y);
 				chessManPoint[xPos][yPos] = chessManColor;
-				System.out.println("xPos: " + xPos + "  yPos: " + yPos);
+				ChessMan chessMan = new ChessMan(this);
+				add(chessMan);
+				chessMan.setBounds(a*20 - 10, b*20 -10, 20, 20);
+				if(chessRule.chessReferee())
+				{
+					if(chessManColor == 1)
+					{
+						text.setText("白棋胜利！！");
+					}
+					else if(chessManColor == -1)
+					{
+						text.setText("黑棋胜利！！");
+					}
+				}
+				else
+				{
+					if(chessManColor == -1)
+					{
+						text.setText("请白棋落子");
+					}
+					else if(chessManColor == 1)
+					{
+						text.setText("请黑棋落子");
+					}
+				}
+				chessManColor = chessManColor*(-1);
+//				System.out.println("xPos: " + xPos + "  yPos: " + yPos);
 			}
 		}
 	}
