@@ -1,5 +1,5 @@
-/* 
- * 
+/*  判断规则，判断胜负
+ *  创建信息：Coder-YJ @ 2017.12.02
  */
 public class ChessRule  
 {
@@ -8,7 +8,7 @@ public class ChessRule
 	int xPos, yPos;          //落子点的位置
 	int chessManColor;       //落子点棋子颜色
 	int chessManPoint[][];
-	int continuePoint[][];  
+	int continuePoint[][];   //落子点各方向直线上的棋子状态
 	int length[]; 
 	ChessRule(ChessPad chessPad) 
 	{
@@ -32,7 +32,7 @@ public class ChessRule
 	}
 /*  函数名称：chessReferee()
  *  参数：无
- *  返回值：Boolean 变量
+ *  返回值：refereeResult 判断结果
  *  函数功能：判断棋盘上当前落子点落子方是否出现五子连珠的情况，若有，则该方胜利，返回结果为true, 否则返回 false
  *  创建信息：Coder-YJ
  */
