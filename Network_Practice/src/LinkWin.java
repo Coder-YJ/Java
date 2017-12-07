@@ -2,9 +2,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.*;
 import java.io.*;
-import javax.swing.JEditorPane;
+import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
-public class Win extends Frame implements ActionListener,Runnable
+public class LinkWin extends JFrame implements ActionListener,Runnable
 {
 	Button button;
 	URL url;
@@ -14,7 +16,7 @@ public class Win extends Frame implements ActionListener,Runnable
 	byte b[] = new byte[118];
 	Thread thread;
 	
-	public Win() 
+	public LinkWin() throws UnknownHostException 
 	{
 		text = new TextField(20);
 		text.setText("http://");
@@ -41,15 +43,31 @@ public class Win extends Frame implements ActionListener,Runnable
 		setVisible(true);
 		validate();
 		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
-		addWindowListener(new WindowAdapter()
+		editPane.addHyperlinkListener(new HyperlinkListener() 
+		{
+			@Override
+			public void hyperlinkUpdate(HyperlinkEvent e)
+			{
+				// TODO Auto-generated method stub
+				if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED)
 				{
-					public void windowClosing(WindowEvent e)
+					try 
 					{
-						System.exit(0);
+						editPane.setPage(e.getURL());
+						
+					} catch (Exception e2) 
+					{
+						// TODO: handle exception
+						editPane.setText(""+e2);
 					}
-				});
+							
+				}
+			}
+		});
+		
+		System.out.println(InetAddress.getLocalHost().getHostName() +"  "+ InetAddress.getLocalHost().getHostAddress());
 	}
 
 	@Override
