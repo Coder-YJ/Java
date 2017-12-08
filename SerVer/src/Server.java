@@ -13,7 +13,10 @@ public class Server
 		DataInputStream in = null;
 		try
 		{
-			server = new ServerSocket(4431);
+			server = new ServerSocket(4432);
+			server.setSoTimeout(30000);
+//			server.getInetAddress();
+			System.out.println("server get started");
 		}
 		catch (IOException e)
 		{
@@ -21,7 +24,7 @@ public class Server
 		}
 		
 		try
-		{
+		{       
 				System.out.println("等待客户机呼叫...");
 				you = server.accept();
 				out = new DataOutputStream(you.getOutputStream());
@@ -40,6 +43,7 @@ public class Server
 		catch (Exception e) 
 		{
 			System.out.println("客户机已断开");
+			
 		}
 	}
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Chess/src/|workplace/awt_practice/src/|ThreadPractice/src/|chapter3/|Network_Practice/src/|SerVer/src/|HuaRongDao/src/|BallotsCount/src/|GoBang/src/|IO_Practice/src/|workplace/|Practice/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="BallotsCount/src"/>
+	<classpathentry kind="src" path="chapter3"/>
+	<classpathentry kind="src" path="Chess/src"/>
+	<classpathentry kind="src" path="GoBang/src"/>
+	<classpathentry kind="src" path="HuaRongDao/src"/>
+	<classpathentry kind="src" path="IO_Practice/src"/>
+	<classpathentry kind="src" path="Network_Practice/src"/>
+	<classpathentry kind="src" path="Practice/src"/>
+	<classpathentry kind="src" path="SerVer/src"/>
+	<classpathentry kind="src" path="ThreadPractice/src"/>
+	<classpathentry excluding="awt_practice/src/" kind="src" path="workplace"/>
+	<classpathentry kind="src" path="workplace/awt_practice/src"/>
+	<classpathentry kind="output" path="BallotsCount/bin"/>
+</classpath>
