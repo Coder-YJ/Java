@@ -82,7 +82,6 @@ public class ComputerClient extends Frame implements Runnable,ActionListener
 			
 			if(s != null)
 			{
-//				System.out.println(s);
 				try 
 				{
 					out.writeUTF(s);

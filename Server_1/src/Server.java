@@ -31,9 +31,10 @@ public class Server
 				System.out.println("正在等待客户");
 			}
 			
-			if(you == null)
+			if(you != null)
 			{
 				new ServerThread(you).start();  //为每个客户启动一个专门的线程
+				System.out.println("New thread start");
 			}
 		}
 	}

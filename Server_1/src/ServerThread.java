@@ -28,6 +28,7 @@ public class ServerThread extends Thread
 
 	public void run()
 	{
+		System.out.println("Server run");
 		while(true)
 		{
 			double a[] = new double[3];
@@ -35,9 +36,7 @@ public class ServerThread extends Thread
 			try 
 			{
 				
-				System.out.println("Server run");
 				s = in.readUTF();
-				System.out.println("Server run");
 				question = false;
 				StringTokenizer st = new StringTokenizer(s, ", ");
 				while(st.hasMoreTokens())
