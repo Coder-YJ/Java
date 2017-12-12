@@ -1,5 +1,4 @@
 import java.sql.*;
-import javax.
 public class Example15_1 
 {
 	public static void main(String[] args) 
