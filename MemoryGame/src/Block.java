@@ -8,12 +8,12 @@ public class Block extends JButton
 	// JButton 不需要构造函数 ？？
 	ImageIcon openStateIcon;
 	
-	public ImageIcon getImageIcon()
+	public ImageIcon getOpenStateIcon()
 	{
 		return openStateIcon;
 	}
 	
-	public void setImageIcon(ImageIcon icon)
+	public void setOpenStateIcon(ImageIcon icon)
 	{
 		openStateIcon = icon;
 	}

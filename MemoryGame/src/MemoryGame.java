@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
@@ -15,6 +16,8 @@ public class MemoryGame extends JFrame implements ActionListener
 	JMenuItem oneGradeResult, twoGradeResult, threeGradeResult; 
 	JMenuItem carImageIcon, animalImageIcon;
 	File fileOneGrade, fileTwoGrade, fileThreeGrade, gradeFile;
+	
+
 	
 	String imageName[];
 	MemoryTestArea memoryTestArea;
@@ -104,7 +107,7 @@ public class MemoryGame extends JFrame implements ActionListener
 		
 		for(int i=0; i<imageNumber; i++)
 		{
-			imageName[i] = new String("car" + i + ".jpg");
+			imageName[i] = new String("images/car" + i + ".jpg");
 		}
 		
 		m = 5;
@@ -112,7 +115,9 @@ public class MemoryGame extends JFrame implements ActionListener
 		
 		gradeFile = fileOneGrade;
 		///////////////////////
-		
+		memoryTestArea.initBlock(m, n, imageName, gradeFile); 
+		add(memoryTestArea, BorderLayout.CENTER);
+		showDialog = new ShowRecordDialog();
 		///////////////////////
 		
 		setBounds(100, 100, 400, 360);
