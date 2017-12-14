@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class Record extends JDialog implements ActionListener
 {
-
+	private static final long serialVersionUID = 4L;
 	int time; 
 	JTextField yourName;
 	JLabel label;

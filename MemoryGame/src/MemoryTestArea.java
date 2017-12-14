@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.*;
@@ -10,6 +11,7 @@ import javax.swing.*;
 
 public class MemoryTestArea extends JPanel implements Runnable, ActionListener
 {
+	private static final long serialVersionUID = 3L;
 	int row, col, usedTime, sucess;
 	int scaleHeight, scaleWidth;
 	File gradeFile;
@@ -56,6 +58,37 @@ public class MemoryTestArea extends JPanel implements Runnable, ActionListener
 		record = new Record();
 	}
 
+	public void paint(Graphics g)
+	{
+	
+		scaleHeight = getHeight();
+		scaleWidth = getWidth();
+	    System.out.println("scaleHeight: " + scaleHeight + "  scaleWidth: " + scaleWidth);
+	    initBlockImage();
+		super.paint(g);
+	}
+	
+	public void initBlockImage()
+	{
+//		ImageIcon icon[] = new ImageIcon[imageFileName.length];
+		
+//		for(int i=0; i<icon.length; i++)
+//		{
+//			icon[i] = new ImageIcon(imageFileName[i]);
+//			if(scaleWidth == 0 || scaleHeight ==0)
+//			{
+//				scaleWidth = 480;
+//				scaleHeight =360;
+//			}
+//			icon[i].setImage(icon[i].getImage().getScaledInstance(scaleWidth / row, scaleHeight /col, Image.SCALE_DEFAULT));
+//		}
+//		
+//		for(int i=0; i<allBlockList.size(); i++)
+//		{
+//			allBlockList.get(i).setOpenStateIcon(icon[i%row]);
+//		}
+	}
+	
 	public void initBlock(int m, int n, String name[], File f)
 	{
 		row = m;
@@ -80,26 +113,32 @@ public class MemoryTestArea extends JPanel implements Runnable, ActionListener
 				allBlockList.add(new Block());
 			}
 		}
-	  scaleHeight = allBlockList.get(0).getHeight();
-	  scaleWidth  = allBlockList.get(0).getWidth();
-	  
-	  System.out.println("");
+		for(int i=0; i<allBlockList.size(); i++)
+		{
+			allBlockList.get(i).addActionListener(this);
+		}
+		
 		
 		for(int i=0; i<icon.length; i++)
 		{
 			icon[i] = new ImageIcon(imageFileName[i]);
-			icon[i].setImage(icon[i].getImage().getScaledInstance(scaleHeight, scaleWidth, Image.SCALE_DEFAULT));
+			if(scaleWidth == 0 || scaleHeight ==0)
+			{
+				scaleWidth = 480;
+				scaleHeight =360;
+			}
+			icon[i].setImage(icon[i].getImage().getScaledInstance(scaleWidth / row, scaleHeight /col, Image.SCALE_DEFAULT));
 		}
-		
 		
 		for(int i=0; i<allBlockList.size(); i++)
 		{
-			allBlockList.get(i).addActionListener(this);
 			allBlockList.get(i).setOpenStateIcon(icon[i%row]);
 		}
 		
+		
+		
 		Collections.shuffle(allBlockList); //  随机排列 allBlockList中的节点
-		                                   // 需了解一下 Collection 类  及其 shuffle 函数；
+		                                   //  需了解一下 Collection 类  及其 shuffle 函数；
 		
 		center.setLayout(new GridLayout(row, col));
 		for(int i=0; i<allBlockList.size(); i++)
