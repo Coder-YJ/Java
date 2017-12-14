@@ -1,5 +1,4 @@
 import java.awt.Color;
-
 import javax.swing.*;
 
 public class NumberButton extends JButton{
