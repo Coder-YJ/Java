@@ -8,7 +8,7 @@ public class OperationButton extends JButton{
 		// TODO Auto-generated constructor stub
 		super(operateSign);
 		this.operateSign = operateSign;
-		setForeground(Color.yellow);
+		setForeground(new Color(250, 150, 0));
 	}
 	
 	public String getOperateSign() {

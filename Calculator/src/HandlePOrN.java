@@ -26,7 +26,7 @@ public class HandlePOrN implements ActionListener{
 				resultShow.setText(str);
 				showComputeProcess.setText("" + list.get(0));
 			} catch (Exception ee) {}
-		} else if(list.size() == 3) {
+		} else if (list.size() == 3) {
 			String number2 = list.getLast();
 			try {
 				double d = Double.parseDouble(number2);

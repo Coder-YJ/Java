@@ -38,13 +38,13 @@ public class HandleOperation implements ActionListener{
 				double n2 = Double.parseDouble(numTwo);
 				double result = 0;
 				
-				if(calculateSign.equals("+")) {
+				if (calculateSign.equals("+")) {
 					result = n1 + n2;
-				} else if(calculateSign.equals("-")) {
+				} else if (calculateSign.equals("-")) {
 					result = n1 - n2;
-				} else if(calculateSign.equals("*")) {
+				} else if (calculateSign.equals("*")) {
 					result = n1 * n2;
-				} else if(calculateSign.equals("/")) {
+				} else if (calculateSign.equals("/")) {
 					result = n1 / n2;
 				}
 				
