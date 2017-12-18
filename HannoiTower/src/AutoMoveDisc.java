@@ -43,12 +43,12 @@ public class AutoMoveDisc extends JDialog implements ActionListener {
 		south.add(bStop);
 		south.add(bContinue);
 		south.add(bClose);
+		towerName = new char[3];
 		
 		add(new JScrollPane(showStep), BorderLayout.CENTER);
 		add(south, BorderLayout.SOUTH);
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		
-		towerName = new char[3];
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				time.stop();
@@ -70,7 +70,7 @@ public class AutoMoveDisc extends JDialog implements ActionListener {
 	}
 	
 	public void setTowerName(char[] name) {
-		if(name[0] == name[1] || name[0] == name[1] || name[1] == name[2]) {
+		if(name[0] == name[1] || name[0] == name[1] || name[1] == name[2]) {  // 若给定的三个名称中有相同的，则用默认名称
 			towerName[0] = 'A';
 			towerName[1] = 'B';
 			towerName[2] = 'C';
@@ -244,11 +244,6 @@ public class AutoMoveDisc extends JDialog implements ActionListener {
 			endPoint.putDisc(disc, con);
 			endPoint.setHaveDisc(true);
 		}
-		
-		if(disc == null) {}
-//			System.out.println("disc == null");
-		if(endPoint == null) {}
-//			System.out.println("endPoint == null");
-		
 	}
+	
 }
