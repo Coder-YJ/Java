@@ -3,15 +3,19 @@ import javax.swing.*;
 import javax.swing.text.Position;
 public class Block extends JButton{
 
-	int postionX, postionY;
+	int positionX, positionY;
 	int number;
+	int size;
 	
 	public Block() {
 		// TODO Auto-generated constructor stub
-		postionX = -1;
-		postionY = -1;
+		positionX = -1;
+		positionY = -1;
 		number = -1;
+		size = 20;
 		setBackground(new Color(220, 220 , 0));
+		setSize(size, size);
+		setEnabled(false);
 	}
 	
 	public void setNumber(int number) {
@@ -23,29 +27,29 @@ public class Block extends JButton{
 	}
 	
 	public void setPositon(int postionX, int postionY) {
-		this.postionX = postionX;
-		this.postionY = postionY;
+		this.positionX = postionX;
+		this.positionY = postionY;
 	}
 
 	public Point getPostion()
 	{
-		return new Point(postionX ,postionY);
+		return new Point(positionX ,positionY);
 	}
 	
 	public void setPositionX(int positionX)
 	{
-		this.postionX = positionX;
+		this.positionX = positionX;
 	}
 	
 	public int getPositionX() {
-		return postionX;
+		return positionX;
 	}
 	
 	public void setPositionY(int positionY) {
-		this.postionY = positionY;
+		this.positionY = positionY;
 	}
 	
 	public int getPositionY() {
-		return postionY;
+		return positionY;
 	}
 }
