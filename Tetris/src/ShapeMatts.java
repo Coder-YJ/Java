@@ -1,8 +1,8 @@
 import java.awt.Container;
 
-public class ShapeMatts implements InterfaceShapeMotion{
+public class ShapeMatts extends Shape implements InterfaceShapeMotion{
 
-	boolean isAlive;		// 表示当前实例是否处于乎哟东状态
+	boolean isAlive;		// 表示当前实例是否处于活动状态
 	int shape;              // 用于表示当前实例形状的状态，取值 0-3,表示四种不同的形状
 	Block[] shapeBlock;
 	BlockPoint[] shapePositionPoint;
@@ -29,8 +29,11 @@ public class ShapeMatts implements InterfaceShapeMotion{
 		add();
 	}
 
+	// 变换形状，本类实例只一种形状，无需变换
+	// 形状初始状态为                口口                数字顺序为                     0 1 
+	//                    口口                                                              2 3
 	@Override
-	public void changeShape(int shape) {
+	public void changeShape() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -129,6 +132,15 @@ public class ShapeMatts implements InterfaceShapeMotion{
 			}
 			
 			updateShape();
+		}
+		
+		if(isAlive == false)
+		{
+			for(int i= 0; i < 4; i++) {
+				x = shapePositionPoint[i].getNumberX();
+				y = shapePositionPoint[i].getNumberY();
+				blockPoint[x][y].setHaveBlock(true);;
+			}
 		}
 	}
 	

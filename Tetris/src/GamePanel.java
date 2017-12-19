@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -10,10 +12,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	int xPointCount, yPointCount;
 	BlockPoint[][] blockPoint;
 	Timer timer;
+	Random random;
 	
 	// test
 	ShapeMatts sm;
-	ArrayList<ShapeMatts> shapeList;
+	ArrayList<Shape> shapeList;
 	int index = 0;
 	
 	public GamePanel() {
@@ -27,16 +30,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		timer = new Timer(1000, this);
 		timer.setInitialDelay(500);
 		timer.start();
+		random = new Random();
 		createBlockPoint();
 		
-		sm = new ShapeMatts(this);
+//		sm = new ShapeMatts(this);
 		addKeyListener(this);
 		validate();
 		setFocusable(true);        // 需要设置可获取输入焦点，否则键盘事件无法响应;
 		
 		// test
-		shapeList = new ArrayList<ShapeMatts>();
-		shapeList.add(new ShapeMatts(this));
+		shapeList = new ArrayList<Shape>();
+		shapeList.add(new ShapeRightSeven(this));
 	}
 
 	private void createBlockPoint() {
@@ -60,18 +64,32 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			System.out.println("Get in VK_KP_LEFT");
-			if(((ShapeMatts)shapeList.get(index)) != null && ((ShapeMatts)shapeList.get(index)).isAlive == true) {
-				((ShapeMatts)shapeList.get(index)).goLeft();
+			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
+				((ShapeRightSeven)shapeList.get(index)).goLeft();
 			}
+			System.out.println("Get in VK_LEFT");
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			if(((ShapeMatts)shapeList.get(index)) != null && ((ShapeMatts)shapeList.get(index)).isAlive == true) {
-				((ShapeMatts)shapeList.get(index)).goRight();
+			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
+				((ShapeRightSeven)shapeList.get(index)).goRight();
 			}
+			System.out.println("Get in VK_RIGHT");
 		}
 		
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
+				((ShapeRightSeven)shapeList.get(index)).goDown();
+			}
+			System.out.println("Get in VK_DOWN");
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP) {
+			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
+				((ShapeRightSeven)shapeList.get(index)).changeShape();
+			}
+			System.out.println("Get in VK_UP");
+		}
 	}
 
 	@Override
@@ -91,12 +109,45 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		// TODO Auto-generated method stub
 		if (e.getSource() == timer) {
 			
-			if(((ShapeMatts)shapeList.get(index)).isAlive)
-			{
-				((ShapeMatts)shapeList.get(index)).goDown();
+			if((shapeList.get(index)).isAlive){
+				
+				(shapeList.get(index)).goDown();
+				
 			} else {
-				shapeList.add(new ShapeMatts(this));
-				index ++;
+			    random.setSeed(System.currentTimeMillis());
+			    int whichKindShapw = random.nextInt(7);
+			    switch (whichKindShapw) {
+				    case 0:
+				    { 
+				    	shapeList.add(new ShapeMatts(this));
+				    	index ++;
+				    	break;
+				    }
+				    case 1:
+				    { 
+				    	shapeList.add(new ShapeMatts(this));
+				    	index ++;
+				    	break;
+				    }
+				    case 2:
+				    { 
+				    	shapeList.add(new ShapeMatts(this));
+				    	index ++;
+				    	break;
+				    }
+				    case 3:
+				    { 
+				    	shapeList.add(new ShapeMatts(this));
+				    	index ++;
+				    	break;
+				    }
+				    default:
+				    { 
+				    	;
+				    }
+			    }
+				shapeList.add(new ShapeRightSeven(this));
+				
 			}
 			
 		}

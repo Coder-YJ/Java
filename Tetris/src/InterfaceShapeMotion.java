@@ -1,7 +1,7 @@
 
 public interface InterfaceShapeMotion {
 
-	public void changeShape(int shape);
+	public void changeShape();
 	public void goLeft();
 	public void goRight();
 	public void goDown();
