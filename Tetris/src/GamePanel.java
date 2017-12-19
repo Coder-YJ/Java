@@ -64,31 +64,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		
 		
 		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
-				((ShapeRightSeven)shapeList.get(index)).goLeft();
+			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
+				(shapeList.get(index)).goLeft();
 			}
-			System.out.println("Get in VK_LEFT");
+//			System.out.println("Get in VK_LEFT");
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
-				((ShapeRightSeven)shapeList.get(index)).goRight();
+			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
+				(shapeList.get(index)).goRight();
 			}
-			System.out.println("Get in VK_RIGHT");
+//			System.out.println("Get in VK_RIGHT");
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
-				((ShapeRightSeven)shapeList.get(index)).goDown();
+			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
+				(shapeList.get(index)).goDown();
 			}
-			System.out.println("Get in VK_DOWN");
+//			System.out.println("Get in VK_DOWN");
 		}
 		
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
-			if(((ShapeRightSeven)shapeList.get(index)) != null && ((ShapeRightSeven)shapeList.get(index)).isAlive == true) {
-				((ShapeRightSeven)shapeList.get(index)).changeShape();
+			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
+				(shapeList.get(index)).changeShape();
 			}
-			System.out.println("Get in VK_UP");
+//			System.out.println("Get in VK_UP");
 		}
 	}
 
@@ -114,8 +114,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				(shapeList.get(index)).goDown();
 				
 			} else {
+				
 			    random.setSeed(System.currentTimeMillis());
 			    int whichKindShapw = random.nextInt(7);
+			    System.out.println("whichKindShapw: " + whichKindShapw);
 			    switch (whichKindShapw) {
 				    case 0:
 				    { 
@@ -125,33 +127,48 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				    }
 				    case 1:
 				    { 
-				    	shapeList.add(new ShapeMatts(this));
+				    	shapeList.add(new ShapePillar(this));
 				    	index ++;
 				    	break;
 				    }
 				    case 2:
 				    { 
-				    	shapeList.add(new ShapeMatts(this));
+				    	shapeList.add(new ShapeRightSeven(this));
 				    	index ++;
 				    	break;
 				    }
 				    case 3:
 				    { 
-				    	shapeList.add(new ShapeMatts(this));
+				    	shapeList.add(new ShapeRightZig(this));
 				    	index ++;
 				    	break;
 				    }
+				    case 4:
+				    { 
+				    	shapeList.add(new ShapeSeven(this));
+				    	index ++;
+				    	break;
+				    }
+				    case 5:
+				    { 
+				    	shapeList.add(new ShapeT(this));
+				    	index ++;
+				    	break;
+				    }
+				    case 6:
+				    { 
+				    	shapeList.add(new ShapeZig(this));
+				    	index ++;
+				    	break;
+				    }
+				    
 				    default:
 				    { 
 				    	;
 				    }
 			    }
-				shapeList.add(new ShapeRightSeven(this));
-				
 			}
-			
 		}
-			
 	}
 
 }
