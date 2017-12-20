@@ -20,7 +20,7 @@ public class Shape implements InterfaceShapeMotion{
 		shapePositionPoint = new BlockPoint[4];
 	}
 
-	// 变换形状，由于子类复写，形状变换方向为顺时针方向
+	// 变换形状，由子类复写实现，形状变换方向为顺时针方向
 	@Override
 	public void changeShape() {};
 
@@ -125,7 +125,8 @@ public class Shape implements InterfaceShapeMotion{
 			for(int i= 0; i < 4; i++) {
 				x = shapePositionPoint[i].getNumberX();
 				y = shapePositionPoint[i].getNumberY();
-				blockPoint[x][y].setHaveBlock(true);;
+				blockPoint[x][y].setHaveBlock(true);      // 方块固定后将所处位置点标记为已有方块
+				blockPoint[x][y].putBlock(shapeBlock[i]); // 位置固定后将方块放置在该位置点上
 			}
 		}
 	}

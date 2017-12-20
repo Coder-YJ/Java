@@ -16,8 +16,8 @@ public class ShapeMatts extends Shape{
 	}
 
 	// 变换形状，本类实例只一种形状，无需变换
-	// 形状初始状态为                口口                数字顺序为                     0 1 
-	//                    口口                                                              2 3
+	// 形状初始状态为              口口                数字顺序为                     0 1 
+	//               口口                                                         2 3
 	@Override
 	public void changeShape() {
 		// TODO Auto-generated method stub

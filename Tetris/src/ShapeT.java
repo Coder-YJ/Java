@@ -1,12 +1,5 @@
 
 public class ShapeT extends Shape{
-
-	boolean isAlive;		// 表示当前实例是否处于活动状态
-	int shape;              // 用于表示当前实例形状的状态，取值 0-3,表示四种不同的形状
-	Block[] shapeBlock;
-	BlockPoint[] shapePositionPoint;
-	BlockPoint[][] blockPoint;
-	GamePanel gamePanel;
 	public ShapeT(GamePanel gamePanel) {
 		// TODO Auto-generated constructor stub
 		super(gamePanel);
@@ -21,7 +14,7 @@ public class ShapeT extends Shape{
 	}
 
 	// 变换形状，本类实例有四种可变形状，形状变换方向为顺时针方向
-	// 形状初始状态为               口                数字顺序为                      3
+	// 形状初始状态为                           口                数字顺序为                           3
 	//                  口口口                                                     0 1 2
 	@Override
 	public void changeShape() {

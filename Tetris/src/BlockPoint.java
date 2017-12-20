@@ -1,10 +1,15 @@
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Point;
+
+import javax.swing.JPanel;
 
 public class BlockPoint {
 
 	int positionX, positionY;
 	int numberX, numberY;
 	boolean isHaveBlock;
+	Block block;
 	
 	public BlockPoint() {
 		// TODO Auto-generated constructor stub
@@ -15,12 +20,35 @@ public class BlockPoint {
 		isHaveBlock = false;
 	}
 
+	public void putBlock(Block block) {
+		this.block = block;
+	}
+	
+	public Block getBlock() {
+		return block;
+	}
+	
 	public boolean isHaveBlock() {
 		return isHaveBlock;
 	}
 	
 	public void setHaveBlock(boolean boo) {
 		isHaveBlock = boo;
+	}
+	
+	public boolean removeBlockFrom(JPanel con) 
+	{
+		if(isHaveBlock)
+		{
+			con.remove(block);
+			isHaveBlock = false;
+			
+//			System.out.println("Get in removeBlockFrom");
+			System.out.println(block);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void setPosition(int postionX, int postionY) {

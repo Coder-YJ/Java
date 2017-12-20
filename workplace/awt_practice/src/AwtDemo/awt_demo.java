@@ -4,8 +4,15 @@ public class awt_demo
 {
     public static void main(String[] args)
     {
-//    	FirstWindow fw = new FirstWindow("µÚÒ»¸öjava´°¿Ú");
-//    	WindowText wt = new WindowText("java´°¿Ú");
-    	new PanelTest();
+//    	FirstWindow fw = new FirstWindow("ï¿½ï¿½Ò»ï¿½ï¿½javaï¿½ï¿½ï¿½ï¿½");
+//    	WindowText wt = new WindowText("javaï¿½ï¿½ï¿½ï¿½");
+//    	new PanelTest();
+    	int[] a1 = {0, 1, 2, 3, 4, 5};
+    	int[] a2 = a1;
+    	System.out.println(" " + a1);
+//    	a2 = a1;
+    	
+    	System.out.println(" " + a2);
+    	
     }
 }

@@ -15,7 +15,7 @@ public class ShapeRightSeven extends Shape{
 	}
 
 	// 变换形状，本类实例有四种可变形状，形状变换方向为顺时针方向
-	// 形状初始状态为          口                数字顺序为                      0
+	// 形状初始状态为                       口                数字顺序为                         0
 	//                  口口口                                                     1 2 3
 	@Override
 	public void changeShape() {

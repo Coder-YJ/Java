@@ -13,6 +13,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	BlockPoint[][] blockPoint;
 	Timer timer;
 	Random random;
+	int[] blocksOnLine;
+	
 	
 	// test
 	ShapeMatts sm;
@@ -33,6 +35,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		random = new Random();
 		createBlockPoint();
 		
+		blocksOnLine = new int[yPointCount];
 //		sm = new ShapeMatts(this);
 		addKeyListener(this);
 		validate();
@@ -112,12 +115,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			if((shapeList.get(index)).isAlive){
 				
 				(shapeList.get(index)).goDown();
-				
 			} else {
 				
 			    random.setSeed(System.currentTimeMillis());
 			    int whichKindShapw = random.nextInt(7);
-			    System.out.println("whichKindShapw: " + whichKindShapw);
+//			    System.out.println("whichKindShapw: " + whichKindShapw);
 			    switch (whichKindShapw) {
 				    case 0:
 				    { 
@@ -168,7 +170,50 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				    }
 			    }
 			}
+			
+			clearBlocks();
 		}
 	}
 
+	// 消除整行方块后更新剩余方块
+	private void update() {
+		
+	}
+	
+	private void scoreCalculate() {
+		
+	}
+	
+	private void clearBlocks() {
+		
+//		for (int i = 0; i < yPointCount; i++) {
+//			blocksOnLine[i] = 0;
+//		}
+		
+		for (int j = yPointCount - 1; j >= 0; j--) {
+			blocksOnLine[j] = 0;
+			for (int i = 0; i < xPointCount; i++) {
+				if (blockPoint[i][j].isHaveBlock == true)
+				{
+					blocksOnLine[j] ++;
+				}
+			}
+			
+			if (blocksOnLine[j] == 0) {
+				break;
+			} else if(blocksOnLine[j] == xPointCount) {
+				clearLine(j);
+			}
+		}
+		
+		validate();
+	}
+	
+	private void clearLine(int row) {
+		for (int i =0; i < xPointCount; i++) {
+//			blockPoint[i][row].removeBlockFrom(this);
+			System.out.println("blockPoint["+i+"]["+row+"]： " + blockPoint[i][row].getBlock());
+			remove( blockPoint[i][row].getBlock());
+		}
+	}
 }
