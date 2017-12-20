@@ -18,10 +18,12 @@ public class BlockPoint {
 		numberX = -1;
 		numberY = -1;
 		isHaveBlock = false;
+		block = new Block();
 	}
 
 	public void putBlock(Block block) {
 		this.block = block;
+		isHaveBlock = true;
 	}
 	
 	public Block getBlock() {
@@ -42,9 +44,6 @@ public class BlockPoint {
 		{
 			con.remove(block);
 			isHaveBlock = false;
-			
-//			System.out.println("Get in removeBlockFrom");
-			System.out.println(block);
 			return true;
 		} else {
 			return false;
