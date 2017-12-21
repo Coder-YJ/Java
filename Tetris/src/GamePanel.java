@@ -23,7 +23,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	int  socre;                      // 游戏分数
 	ArrayList<Shape> shapeList;      // 用于存储 形状对象
 	int index = 0;                   // shapeList的指针
-	
+	boolean isGameOver;
 	
 	
 	public GamePanel() {
@@ -31,30 +31,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		setLayout(null);
 		xPointCount = 20;
 		yPointCount = 30;
+		blocksOnLine = new int[yPointCount];
+		continusLineCount = 0;
+		socre = 0;
+		isGameOver = false;
+		
 		// 设置游戏区域的位置及大小
 		setBounds(10, 10, xPointCount * blockSize, yPointCount * blockSize);
 		setBackground(new Color(100, 220, 200));
 		
 		// 创建游戏所需的定时器及随机数
-		timer = new Timer(1000, this);
+		timer = new Timer(700, this);
 		timer.setInitialDelay(500);
 		timer.start();
 		random = new Random();
+		random.setSeed(System.currentTimeMillis());
 		
 		// 生成位置点
 		createBlockPoint();
 		
-		blocksOnLine = new int[yPointCount];
-		
-		continusLineCount = 0;
-		socre = 0;
-		
-		
 		addKeyListener(this);
 		validate();
-		setFocusable(true);        // 需要设置可获取输入焦点，否则键盘事件无法响应;
 		
-		// test
+	    // 需要设置可获取输入焦点，否则键盘事件无法响应;
+		setFocusable(true);       
+		
 		shapeList = new ArrayList<Shape>();
 		shapeList.add(new ShapeRightSeven(this));
 	}
@@ -83,32 +84,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
 				(shapeList.get(index)).goLeft();
 			}
-//			System.out.println("Get in VK_LEFT");
 		}
 		
+		// 
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
 				(shapeList.get(index)).goRight();
 			}
-//			System.out.println("Get in VK_RIGHT");
 		}
 		
+		// 向下键：使形状向下移动，若长按则是快速向下移动
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
 				(shapeList.get(index)).goDown();
 				
-				if((shapeList.get(index)).isAlive == false) {
+				if((shapeList.get(index)).isAlive == false) {  //向下移动后若当前形状方块失效固定，则对所有方块进行处理，若有连成行的方块，则清除改行，同时计算分数，移动剩余方块
 					clearBlocks();
 				}
 			}
-//			System.out.println("Get in VK_DOWN");
 		}
 		
+		// 向上键：改变形状方块的形状
 		if(e.getKeyCode() == KeyEvent.VK_UP) {
 			if((shapeList.get(index)) != null && (shapeList.get(index)).isAlive == true) {
 				(shapeList.get(index)).changeShape();
 			}
-//			System.out.println("Get in VK_UP");
 		}
 	}
 
@@ -127,16 +127,18 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
+		// 定时移动形状方块，若当前形状方块已失效，则生成新的形状方块;
 		if (e.getSource() == timer) {
 			
 			if((shapeList.get(index)).isAlive){
 				
 				(shapeList.get(index)).goDown();
+				
 			} else {
 				
-			    random.setSeed(System.currentTimeMillis());
 			    int whichKindShapw = random.nextInt(7);
-//			    System.out.println("whichKindShapw: " + whichKindShapw);
+			    
 			    switch (whichKindShapw) {
 				    case 0:
 				    { 
@@ -206,40 +208,35 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				
 			} else if (continusLineCount != 0) {          // 若出现连成行的情况，统计分数并更新剩余方块
 				socre += Math.pow(2, continusLineCount);
-				continusLineCount = 0; 
 				startRow = i;
-				
 				blocksMoveDown(startRow, continusLineCount);      // 更新剩余方块
+				continusLineCount = 0; 
 			}
 		}
 		System.out.println("score:" + socre);
-	}
-	
-	// 删除连成行的方块后，对剩余方块进行更新
-	private void updateBlocks() {
-		
 	}
 	
 	// 从指定行 startRow 开始,将所有方块向下移动 rows 行
 	private void blocksMoveDown(int startRow, int rows) {
 		int positionY;
 		int positionX;
-		System.out.println("startRow, rows: " + startRow + ", " + rows);
 		for (int j = startRow; j >=0; j--) {
 			for(int i = 0; i < xPointCount; i++	) {         // 此处有待改进，无需对剩余所有行进行移动，只移动有方块的行即可
 				if (blockPoint[i][j].isHaveBlock == true) {
 					
+					// 获取向下 rows 行对应位置点的 X , Y 坐标值
 					positionY = blockPoint[i][j + rows].getPositionY();
 					positionX = blockPoint[i][j + rows].getPositionX();
 					
+					// 将方块向下移动到 rows 行
 					blockPoint[i][j].getBlock().setPositionY(positionY);
 					blockPoint[i][j].getBlock().setLocation(positionX, positionY);
-					System.out.println("positionY, positionY: " + positionY + ", " + positionY);
 					
+					// 将方块对象保存到该位置点上
 					blockPoint[i][j + rows].putBlock(blockPoint[i][j].getBlock());
+					
+					// 使当前位置点变为无方块状态
 					blockPoint[i][j].setHaveBlock(false);
-					
-					
 				}
 			}
 		}

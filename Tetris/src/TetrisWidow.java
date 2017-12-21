@@ -4,7 +4,7 @@ import java.awt.FlowLayout;
 import javax.swing.*;
 
 /**
- * 俄罗斯方块，已完成 百分之八十，未完成功能： 消除连成行的方块后对剩余方块位置的更新
+ * 
  * @author QYJ
  *
  */

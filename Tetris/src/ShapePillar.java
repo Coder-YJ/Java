@@ -26,16 +26,17 @@ public class ShapePillar extends Shape {
 		switch (shape) {
 		
 			case 0:
-			{   // 由水平形状变换为竖直形状
-				if(y + 3 < gamePanel.yPointCount && x + 1 < gamePanel.xPointCount) {   // 判断形状变换后是否超出游戏区域边界
-					
-					block[0] = blockPoint[x + 1][y];
-					block[1] = blockPoint[x + 1][y + 1];
-					block[2] = blockPoint[x + 1][y + 2];
-					block[3] = blockPoint[x + 1][y + 3];
+			{  
+				   // 由竖直形状变换为水平形状
+				if ((x - 1 >= 0 ) && (x + 2 < gamePanel.xPointCount)) {
+					block[0] = blockPoint[x - 1][y];
+					block[1] = blockPoint[x][y];
+					block[2] = blockPoint[x + 1][y];
+					block[3] = blockPoint[x + 2][y];
 				} else {
 					break;
 				}
+
 				
 				for (int i = 0; i < 4; i++) {
 					if (block[i].isHaveBlock == true) {   // 先判断变化后的形状是否和游戏区域中已有方块冲突
@@ -55,19 +56,21 @@ public class ShapePillar extends Shape {
 					shape = 1;
 				}
 				break;
+			
 			}
 				
 			case 1:
-			{   // 由竖直形状变换为水平形状
-				if ((x - 1 >= 0 ) && (x + 2 < gamePanel.xPointCount)) {
-					block[0] = blockPoint[x - 1][y];
-					block[1] = blockPoint[x][y];
-					block[2] = blockPoint[x + 1][y];
-					block[3] = blockPoint[x + 2][y];
+			{
+				 // 由水平形状变换为竖直形状
+				if(y + 3 < gamePanel.yPointCount && x + 1 < gamePanel.xPointCount) {   // 判断形状变换后是否超出游戏区域边界
+					
+					block[0] = blockPoint[x + 1][y];
+					block[1] = blockPoint[x + 1][y + 1];
+					block[2] = blockPoint[x + 1][y + 2];
+					block[3] = blockPoint[x + 1][y + 3];
 				} else {
 					break;
 				}
-
 				
 				for (int i = 0; i < 4; i++) {
 					if (block[i].isHaveBlock == true) {   // 先判断变化后的形状是否和游戏区域中已有方块冲突
