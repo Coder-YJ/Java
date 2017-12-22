@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Random;
 
 import javax.swing.*;
@@ -24,10 +23,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	ArrayList<Shape> shapeList;      // 用于存储 形状对象
 	int index = 0;                   // shapeList的指针
 	boolean isGameOver;
+	boolean isPause;
+	JTextField scoreText;
+	JButton pauseButton;
 	
-	
-	public GamePanel() {
+	public GamePanel(JTextField scoreText, JButton pauseButton) {
 		// TODO Auto-generated constructor stub
+		this.scoreText = scoreText;
+		this.pauseButton = pauseButton;
 		setLayout(null);
 		xPointCount = 20;
 		yPointCount = 30;
@@ -35,9 +38,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		continusLineCount = 0;
 		socre = 0;
 		isGameOver = false;
+		isPause = false;
 		
 		// 设置游戏区域的位置及大小
-		setBounds(10, 10, xPointCount * blockSize, yPointCount * blockSize);
+		setBounds(15, 15, xPointCount * blockSize, yPointCount * blockSize);
 		setBackground(new Color(100, 220, 200));
 		
 		// 创建游戏所需的定时器及随机数
@@ -56,8 +60,11 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	    // 需要设置可获取输入焦点，否则键盘事件无法响应;
 		setFocusable(true);       
 		
+		// 创建用于存储形状的Arrlist列表对象
 		shapeList = new ArrayList<Shape>();
 		shapeList.add(new ShapeRightSeven(this));
+		
+		pauseButton.addActionListener(this);
 	}
 
 	private void createBlockPoint() {
@@ -194,6 +201,24 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				clearBlocks();
 			}
 		}
+		
+		if (e.getSource() == pauseButton) {
+			isPause = !isPause;
+			if(isPause == true) {
+				timer.stop();;
+				pauseButton.setText("继续");
+			} else {
+				timer.start();
+				pauseButton.setText("暂停");
+			}
+			
+			// 单击按键后， 焦点或转移到按钮上，若当前面板不是未获取焦点，则再次请求获取焦点
+			// 否则单击按键后 本 Panel 对象无法响应键盘事件;
+			if (!this.isFocusOwner()) {     
+				this.requestFocus();        
+			}
+				
+		}
 	}
 
 	// 计算分数
@@ -213,7 +238,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 				continusLineCount = 0; 
 			}
 		}
-		System.out.println("score:" + socre);
+		
+		scoreText.setText("" + socre);
+		
 	}
 	
 	// 从指定行 startRow 开始,将所有方块向下移动 rows 行
