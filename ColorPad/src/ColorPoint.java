@@ -1,4 +1,6 @@
+import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -11,7 +13,8 @@ public class ColorPoint extends JButton{
 		this.red = red;
 		this.green =green;
 		this.blue = blue;
-		setSize(5,5);
+		setPreferredSize(new Dimension(4, 4));
+//		setSize(10, 10);
 		setBackground(new Color(red ,green, blue));
 		setEnabled(false);
 		addMouseListener(colorPad);

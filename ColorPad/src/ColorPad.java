@@ -1,6 +1,9 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -12,10 +15,12 @@ public class ColorPad extends JFrame implements ActionListener, MouseListener{
 
 	JPanel colorPanel;
 	JPanel valuePanel;
+	JPanel demoPanel;
 	JTextField colorText;
 	int red;
 	int green;
 	int blue;
+	Image image;
 	
 	public ColorPad() {
 		// TODO Auto-generated constructor stub
@@ -25,16 +30,26 @@ public class ColorPad extends JFrame implements ActionListener, MouseListener{
 		
 		colorPanel = new JPanel();
 		valuePanel = new JPanel();
+		demoPanel = new JPanel();
+		
 		colorText = new JTextField(11);
-		colorPanel.setLayout(new FlowLayout());
-		valuePanel.setBounds(450, 0, 150, 670);
+		
+		FlowLayout flow = new FlowLayout(); 
+		flow.setHgap(0);
+		flow.setVgap(0);
+		flow.setAlignment(FlowLayout.LEFT);
+		colorPanel.setLayout(flow);
+		valuePanel.setBounds(450, 0, 150, 100);
 		colorPanel.setBounds(0, 0, 450, 670);
+		demoPanel.setBounds(450, 120, 150, 100);
+		demoPanel.setBackground(Color.gray);
 		valuePanel.add(colorText);
 		
 		valuePanel.setBackground(Color.gray);
-		add(colorPanel, BorderLayout.CENTER);
-		add(valuePanel, BorderLayout.EAST);
-		
+		add(colorPanel);
+		add(valuePanel);
+		add(demoPanel);
+				
 		createColorPanel();
 		setResizable(true);
 		setVisible(true);
@@ -72,12 +87,13 @@ public class ColorPad extends JFrame implements ActionListener, MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() instanceof ColorPoint) {
-//			int red = ((ColorPoint)e.getSource()).red;
-//			int green = ((ColorPoint)e.getSource()).green;
-			int red = ((ColorPoint)e.getSource()).getBounds().width;
-			int green = ((ColorPoint)e.getSource()).getBounds().height;
+			int red = ((ColorPoint)e.getSource()).red;
+			int green = ((ColorPoint)e.getSource()).green;
+//			int red = ((ColorPoint)e.getSource()).getBounds().width;
+//			int green = ((ColorPoint)e.getSource()).getBounds().height;
 			int blue = ((ColorPoint)e.getSource()).blue;
 			colorText.setText("("+ red + " ," + green + " ," + blue + ")");
+			demoPanel.setBackground(new Color(red, green, blue));
 		}
 
 	}

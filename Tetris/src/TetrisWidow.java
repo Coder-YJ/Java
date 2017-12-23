@@ -26,7 +26,7 @@ public class TetrisWidow extends JFrame{
 		scorePanel = new JPanel();
 		scorePanel.setLayout(new FlowLayout());
 		scorePanel.setBounds(425, 30, 100, 150);
-		scorePanel.setBackground(Color.green);
+		scorePanel.setBackground(new Color(40, 150, 190));
 		scoreLabel = new JLabel("分 数");
 		scoreLabel.setFont(new Font("新宋体", Font.BOLD, 18));
 		scoreText = new JTextField(5);
