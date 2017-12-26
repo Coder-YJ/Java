@@ -12,7 +12,7 @@ public class InputStudent extends JPanel implements ActionListener{
 	HashMap<String, Student> basicInfoTable = null;
 	JTextField number, name, grade, borth;
 	JButton buttonChoicePic;
-	JComboBox major;  //  Ïœ§  JComboBox 
+	JComboBox<String> major;  //  Ïœ§  JComboBox 
 	JRadioButton male, female;
 	ButtonGroup group = null;
 	JButton buttonInput, buttonReset;
@@ -28,7 +28,7 @@ public class InputStudent extends JPanel implements ActionListener{
 		pic = new StudentPicture();
 	    number = new JTextField(5);
 	    name = new JTextField(5);
-	    major = new JComboBox();
+	    major = new JComboBox<String>();
 	    
 	    try {
 	    	
