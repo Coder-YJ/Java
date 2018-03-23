@@ -1,0 +1,18 @@
+1:package chapter18;
+2:import java.io.*;
+3:
+4:public class BasicFileOutput {
+5:
+6:	static String file = "E:\\Java\\ThinkingInJava\\src\\chapter18\\BasicFileOutput.out";
+7:	public static void main(String[] args) throws IOException{
+8:		BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read("E:\\Java\\ThinkingInJava\\src\\chapter18\\BasicFileOutput.java")));	
+9:		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+10:		int lineCount = 1;
+11:		String s;
+12:		while((s = in.readLine()) != null) {
+13:			out.println(lineCount++ + ":" + s);
+14:		}
+15:		out.close();
+16:		System.out.println(BufferedInputFile.read(file));
+17:	}
+18:}
