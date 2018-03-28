@@ -88,8 +88,8 @@ public class JXCFrame {
 		baseManagerPanel.setBackground(new Color(215, 223, 194));
 		baseManagerPanel.setLayout(new BoxLayout(baseManagerPanel, BoxLayout.X_AXIS));
 		baseManagerPanel.add(createFrameButton("客户信息管理", "KeHuGuanli"));
-		baseManagerPanel.add(createFrameButton("商品信息管理", "KeHuGuanli"));
-		baseManagerPanel.add(createFrameButton("供应商信息管理", "KeHuGuanli"));
+		baseManagerPanel.add(createFrameButton("商品信息管理", "ShangPinGuanLi"));
+		baseManagerPanel.add(createFrameButton("供应商信息管理", "GysGuanLi"));
 		
 		JPanel depotManagerPanel = new JPanel();
 		depotManagerPanel.setBackground(new Color(215, 234, 194)); 
@@ -212,6 +212,7 @@ public class JXCFrame {
 		JInternalFrame jf = null;
 		if(!ifs.containsKey(frameName)) {
 			try {
+				System.out.println("internalFrame." + frameName);
 				Class<?> fClass = Class.forName("internalFrame." + frameName);
 				
 				Constructor<?> constructor = fClass.getConstructor(null);   // 此处用法不太明白

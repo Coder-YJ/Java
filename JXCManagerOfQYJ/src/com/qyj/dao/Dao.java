@@ -8,10 +8,22 @@ import internalFrame.guanli.Item;
 import model.*;
 
 public class Dao {
-	protected static String dbClassName = "com.microsoft.jdbc.sqlserver.SQLServerDriver";
-	protected static String dbUrl = "jdbc:microsoft:sqlserver://localhost:1433;" + "DatabaseName=db_JXC;SelectMethod=Cursor";
+//	protected static String dbClassName = "com.microsoft.jdbc.sqlserver.SQLServerDriver";
+//	protected static String dbUrl = "jdbc:microsoft:sqlserver://localhost:1433;" + "DatabaseName=db_JXC;SelectMethod=Cursor";
+//	protected static String dbUser = "sa";
+//	protected static String dbPwd = "qianyuanjing";
+	
+	// 定义数据库驱动类的名称
+	protected static String dbClassName = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	// 定义访问数据的URL
+	protected static String dbUrl = "jdbc:sqlserver://localhost:1433;" 
+								    + "DatabaseName=db_database28;SelectMethod=Cursor";
+	// 定义访问数据库的用户名
 	protected static String dbUser = "sa";
+	
+	// 定义访问数据库的密码
 	protected static String dbPwd = "qianyuanjing";
+	
 	protected static String second = null;
 	public static Connection conn = null;
 	
