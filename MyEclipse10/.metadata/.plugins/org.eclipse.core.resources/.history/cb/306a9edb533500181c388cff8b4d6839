@@ -1,0 +1,60 @@
+package libServlet;
+
+import java.io.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import system.*;
+import java.sql.*;
+
+public class query_cur_borrow_servlet extends HttpServlet {
+	public void destroy() {
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String passby = (String) request.getSession().getAttribute("passby");
+		int usertype = 0;
+		if (passby != null) {
+			Object temp_obj = request.getSession().getAttribute("usertype");
+			usertype = Integer.valueOf(String.valueOf(temp_obj)).intValue();
+		}
+		if ("1".equals(passby) && usertype == 1) {
+			// ��ȡ��ǰ�û���ID
+			String userid = (String) (request.getSession().getAttribute("userid"));
+			readerBean reader_bean = new readerBean();
+			reader_bean.setUserid(userid);
+			com1Class com1 = reader_bean.query_cur_borrow();
+			Connection con = com1.getCon();
+			Statement stmt = com1.getStmt();
+			ResultSet rs = com1.getRs();
+			if (rs == null) {
+				// ��¼��Ϊ��
+				response.setContentType("text/html;charset=GBK");
+				java.io.PrintWriter out = response.getWriter();
+				out.println("��ǰ�޽����鼮��");
+				try {
+					// �ͷ���Դ
+					rs.close();
+					stmt.close();
+					con.close();
+				} catch (Exception e) {
+				}
+			} else {
+				// ����¼���ȱ��浽session �У��Ա�JSP �ļ���ȡ
+				request.getSession().setAttribute("query_cur_borrow_connection", con);
+				request.getSession().setAttribute("query_cur_borrow_statement", stmt);
+				request.getSession().setAttribute("query_cur_borrow_resultSet", rs);
+				response.sendRedirect("../query_cur_borrow_result.jsp");
+			}
+		} else {
+			response.sendRedirect("../login_error.jsp");
+		}
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	public void init() throws ServletException {
+	}
+}

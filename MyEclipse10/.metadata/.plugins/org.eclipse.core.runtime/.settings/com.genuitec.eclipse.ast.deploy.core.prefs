@@ -1,0 +1,14 @@
+#Sun Apr 01 12:01:38 CST 2018
+tomcat7Server.JspTest.type=WebDeployment
+tomcat7Server.JspTest.isDeployed=true
+tomcat7Server.JspTest.noFileCopy=false
+tomcat7Server.JspTest.deployIsOverProject=false
+tomcat7Server.JspTest.altContextRoot=
+tomcat7Server.JspTest.shouldBackup=false
+tomcat7Server.JspTest.deploymentPath=D\:\\Tomcat 7.0\\webapps\\JspTest
+eclipse.preferences.version=1
+tomcat7Server.JspTest.shouldOverwrite=false
+tomcat7Server.JspTest.isExploded=true
+tomcat7Server.JspTest.contextRoot=/JspTest
+tomcat7Server.JspTest.isUptoDate=true
+tomcat7Server.JspTest.IEARProjectName=

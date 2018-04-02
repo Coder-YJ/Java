@@ -1,0 +1,7 @@
+INDEX VERSION 1.126
+E:\Java\MyEclipse10\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2166484006.index
+\JSPLIB\src
+E:\Java\MyEclipse10\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1689471438.index
+\JspTest\src
+E:\Java\MyEclipse10\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1853549652.index
+\JspTest\src

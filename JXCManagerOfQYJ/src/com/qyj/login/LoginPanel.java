@@ -17,6 +17,6 @@ public class LoginPanel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Image img = icon.getImage();
-		g.drawImage(img, 0, 0,getParent());
+		g.drawImage(img, 0, 0, getParent());
 	}
 }

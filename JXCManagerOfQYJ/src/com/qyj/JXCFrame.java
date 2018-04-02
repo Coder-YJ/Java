@@ -17,6 +17,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
+import com.qyj.login.*;
 
 public class JXCFrame {
 	private JDesktopPane desktopPane;		// 创建一个复合式窗体容器
@@ -87,7 +88,7 @@ public class JXCFrame {
 		JPanel baseManagerPanel = new JPanel();
 		baseManagerPanel.setBackground(new Color(215, 223, 194));
 		baseManagerPanel.setLayout(new BoxLayout(baseManagerPanel, BoxLayout.X_AXIS));
-		baseManagerPanel.add(createFrameButton("客户信息管理", "KeHuGuanli"));
+		baseManagerPanel.add(createFrameButton("客户信息管理", "KeHuGuanLi"));
 		baseManagerPanel.add(createFrameButton("商品信息管理", "ShangPinGuanLi"));
 		baseManagerPanel.add(createFrameButton("供应商信息管理", "GysGuanLi"));
 		
@@ -130,7 +131,7 @@ public class JXCFrame {
 		sysManagerPanel.setLayout(new BoxLayout(sysManagerPanel, BoxLayout.X_AXIS));
 		sysManagerPanel.add(createFrameButton("操作员管理", "CzyGL"));
 		sysManagerPanel.add(createFrameButton("更改密码", "GengGaiMiMa"));
-		sysManagerPanel.add(createFrameButton("权限管理", "QuanXianGuanLi"));
+		sysManagerPanel.add(createFrameButton("权限管理", "QuanManager"));
 		
 		
 		// 将所有面板添加到导航面板中

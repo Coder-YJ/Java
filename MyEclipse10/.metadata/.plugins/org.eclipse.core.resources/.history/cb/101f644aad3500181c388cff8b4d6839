@@ -1,0 +1,98 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<html>
+<head>
+<title>我的第一个JSP例子</title>
+</head>
+<body text="#52DA25" bgcolor="000000">
+	<hr>
+	<b> 自学这条道道路虽然很艰辛，但是我会成功的！ </b>
+	<hr>
+	<ul type="disc">
+		<li>未排列表_1</li>
+		<li>未排列表_2</li>
+		<li>未排列表_3</li>
+		<li>未排列表_4</li>
+		<li>未排列表_5</li>
+	</ul>
+	<ol>
+		<li>排序列表_1</li>
+		<li>排序列表_2</li>
+		<li>排序列表_3</li>
+		<li>排序列表_4</li>
+		<li>排序列表_5</li>
+	</ol>
+	<ol type="a">
+		<li>排序列表_1</li>
+		<li>排序列表_2</li>
+		<li>排序列表_3</li>
+		<li>排序列表_4</li>
+		<li>排序列表_5</li>
+	</ol>
+	<h1 align="center">用户注册</h1>
+	<form action="Process.jsp" method="post">
+		<b>账号：  </b><input type="text" name="id"><br>
+		<b>密码：  </b><input type="password" name="password"><br>
+		<b>确认密码：</b><input type="password" name="checkPWD"><br>
+		<input type="submit" value="确定">
+		<input type="reset" value="清除">
+		<input type="submit" value="确定">
+	</form>
+	<table align="center" bordercolor="#F25815">
+		<h3>温馨提示：</h3>
+		<tr bgcolor="122345">
+			<td>
+				<%
+					//获得当前的时间
+					Date today = new Date();
+					out.print("现在是北京时间：" + today);
+				%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%
+					//获得当前时间中的小时
+					int hour = today.getHours();
+					if (0 <= hour && hour <= 5) {
+						out.print("现在是北京时间凌晨 " + hour + "点");
+					} else if (5 < hour && hour <= 10) {
+						out.print("早上 " + hour + "点");
+					} else if (10 < hour && hour < 13) {
+						out.print("中午 " + hour + "点");
+					} else if (13 <= hour && hour < 18) {
+						out.print("下午 " + hour + "点");
+					} else if (18 <= hour && hour < 21) {
+						out.print("晚上 " + hour + "点");
+					} else if (21 <= hour && hour < 24) {
+						out.print("深夜 " + hour + "点");
+					}
+				%>
+			</td>
+		</tr>
+	</table>
+
+	<table width="100%" border="1" cellspaceing="3" cellpadding="5">
+		<caption align="center">表格范例</caption>
+		<tr height="40" bgcolor="FFFF00">
+			<th>姓名</th>
+			<th>性别</th>
+			<th>出生年月</th>
+			<th>所学专业</th>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>女</td>
+			<td>1991.06</td>
+			<td>工业自动化</td>
+			<td>看你咋办</td>
+		</tr>
+	</table>
+</body>
+</html>
+

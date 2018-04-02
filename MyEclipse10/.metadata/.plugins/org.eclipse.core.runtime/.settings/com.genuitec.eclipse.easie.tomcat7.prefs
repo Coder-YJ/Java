@@ -1,0 +1,10 @@
+#Sun Apr 01 22:36:44 CST 2018
+TOMCAT_HOME=D\:\\Tomcat 7.0
+TOMCAT_TEMP=D\:\\Tomcat 7.0\\temp
+LIBRARY_PATH="D\:\\Java\\jdk1.8.0_121\\bin;D\:\\Tomcat 7.0\\bin"
+TOMCAT_BASE=D\:\\Tomcat 7.0
+ENDORSED_DIRS="D\:\\Tomcat 7.0/common/endorsed"
+eclipse.preferences.version=1
+JDK_INSTALLATION_NAME=jdk1.8.0_121
+JDK_HOME=D\:\\Java\\jdk1.8.0_121
+SERVER_ENABLEMENT=true
