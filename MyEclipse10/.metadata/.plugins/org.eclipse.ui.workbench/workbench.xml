@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="74" version="2.0">
 <workbenchAdvisor/>
 <window height="828" maximized="true" width="971" x="527" y="-22">
 <fastViewData fastViewLocation="1024"/>
@@ -41,6 +41,8 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -48,11 +50,17 @@
 <editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="class_declare.jsp" partName="class_declare.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/class_declare.jsp" title="class_declare.jsp" tooltip="JspTest/WebRoot/class_declare.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JspTest/WebRoot/class_declare.jsp"/>
 </editor>
-<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="test.jsp" partName="test.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/test.jsp" title="test.jsp" tooltip="JspTest/WebRoot/test.jsp" workbook="DefaultEditorWorkbook">
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="test.jsp" partName="test.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/test.jsp" title="test.jsp" tooltip="JspTest/WebRoot/test.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JspTest/WebRoot/test.jsp"/>
 </editor>
 <editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="index.jsp" partName="index.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/index.jsp" title="index.jsp" tooltip="JspTest/WebRoot/index.jsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JspTest/WebRoot/index.jsp"/>
+</editor>
+<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="form_input.jsp" partName="form_input.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/form_input.jsp" title="form_input.jsp" tooltip="JspTest/WebRoot/form_input.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JspTest/WebRoot/form_input.jsp"/>
+</editor>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="form_process.jsp" partName="form_process.jsp" path="E:/Java/MyEclipse10/JspTest/WebRoot/form_process.jsp" title="form_process.jsp" tooltip="JspTest/WebRoot/form_process.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/JspTest/WebRoot/form_process.jsp"/>
 </editor>
 </editors>
 <views>
@@ -70,11 +78,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (34 items)"/>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -259,7 +262,7 @@
 </folder>
 </info>
 <info folder="true" part="bottom" ratio="0.7516129" ratioLeft="699" ratioRight="231" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="com.genuitec.eclipse.ui.HTMLView" label="Web Browser"/>
@@ -304,13 +307,7 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/libServlet/add_update_servlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/libServlet/query_book_detail_servlet.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/libServlet/add_user_servlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/database/stmtBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/database/execSQLBean.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/libServlet/reserve_book_servlet.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/JSPLIB/src/libServlet/admin_manage_servlet.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/index.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/test.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/WEB-INF/class_delcare.jsp"/>
@@ -322,81 +319,67 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/index.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/JspTest/WebRoot/class_declare.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/class_declare.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/form_input.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/JspTest/WebRoot/form_process.jsp"/>
 </editors>
-<item historyLabel="add_user_servlet.java" index="2">
-<position info="not_deleted" x="807" y="0"/>
-</item>
-<item historyLabel="query_book_detail_servlet.java" index="1">
-<position info="not_deleted" x="1378" y="0"/>
-</item>
-<item historyLabel="stmtBean.java" index="3">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="execSQLBean.java" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="reserve_book_servlet.java" index="5">
-<position info="not_deleted" x="946" y="0"/>
-</item>
-<item historyLabel="add_user_servlet.java" index="2">
-<position info="not_deleted" x="848" y="0"/>
-</item>
-<item historyLabel="add_update_servlet.java" index="0">
-<position info="not_deleted" x="1183" y="0"/>
-</item>
-<item historyLabel="admin_manage_servlet.java" index="6">
-<position info="not_deleted" x="1460" y="0"/>
-</item>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="class_delcare.jsp" index="9"/>
-<item historyLabel="class_delcare.jsp" index="10">
+<item historyLabel="test.jsp" index="2"/>
+<item historyLabel="class_delcare.jsp" index="3"/>
+<item historyLabel="class_delcare.jsp" index="4">
 <position/>
 </item>
-<item historyLabel="index.jsp" index="7"/>
-<item historyLabel="test.jsp" index="8"/>
-<item historyLabel="class_delcare.jsp" index="11"/>
-<item historyLabel="user_validate_servlet.java" index="12">
+<item historyLabel="index.jsp" index="1"/>
+<item historyLabel="test.jsp" index="2"/>
+<item historyLabel="class_delcare.jsp" index="5"/>
+<item historyLabel="user_validate_servlet.java" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="add_user_servlet.java" index="2">
+<item historyLabel="add_user_servlet.java" index="0">
 <position info="not_deleted" x="848" y="0"/>
 </item>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="index.jsp" index="15"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="index.jsp" index="15"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="index.jsp" index="15"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_delcare.jsp" index="13"/>
-<item historyLabel="class_declare.jsp" index="16">
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="index.jsp" index="9"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="index.jsp" index="9"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="index.jsp" index="9"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_delcare.jsp" index="7"/>
+<item historyLabel="class_declare.jsp" index="10">
 <position/>
 </item>
-<item historyLabel="test.jsp" index="14"/>
-<item historyLabel="class_declare.jsp" index="17"/>
-<item historyLabel="index.jsp" index="15"/>
-<item active="true" historyLabel="test.jsp" index="14"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="class_declare.jsp" index="11"/>
+<item historyLabel="index.jsp" index="9"/>
+<item historyLabel="test.jsp" index="8"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item historyLabel="form_input.jsp" index="12"/>
+<item historyLabel="form_process.jsp" index="13"/>
+<item active="true" historyLabel="form_input.jsp" index="12"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -414,6 +397,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="form_process.jsp" tooltip="JspTest/WebRoot/form_process.jsp">
+<persistable path="/JspTest/WebRoot/form_process.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="form_input.jsp" tooltip="JspTest/WebRoot/form_input.jsp">
+<persistable path="/JspTest/WebRoot/form_input.jsp"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="index.jsp" tooltip="JspTest/WebRoot/index.jsp">
 <persistable path="/JspTest/WebRoot/index.jsp"/>
 </file>
@@ -452,12 +441,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="resultSetBean.java" tooltip="JSPLIB/src/database/resultSetBean.java">
 <persistable path="/JSPLIB/src/database/resultSetBean.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin_interface.jsp" tooltip="JSPLIB/WebRoot/admin_interface.jsp">
-<persistable path="/JSPLIB/WebRoot/admin_interface.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="add_update_servlet.java" tooltip="JSPLIB/src/libServlet/add_update_servlet.java">
-<persistable path="/JSPLIB/src/libServlet/add_update_servlet.java"/>
 </file>
 </mruList>
 </workbench>

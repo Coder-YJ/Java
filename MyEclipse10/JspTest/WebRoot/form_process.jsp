@@ -1,0 +1,16 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<html>
+<body bgcolor=green><FONT size=3>
+   <P>获取文本框提交的信息：
+      <% String textContent=request.getParameter("input_text");
+      byte b[]=textContent.getBytes("UTF-8");
+      textContent=new String(b);%>
+    <BR><%=textContent%>
+</body>
+</html>
+
